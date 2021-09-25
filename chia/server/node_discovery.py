@@ -26,7 +26,7 @@ MAX_PEERS_RECEIVED_PER_REQUEST = 1000
 MAX_TOTAL_PEERS_RECEIVED = 3000
 MAX_CONCURRENT_OUTBOUND_CONNECTIONS = 70
 NETWORK_ID_DEFAULT_PORTS = {
-    "mainnet": 8444,
+    "mainnet": 38443,
     "testnet7": 58444,
     "testnet8": 58445,
 }
@@ -92,6 +92,8 @@ class FullNodeDiscovery:
     async def initialize_address_manager(self) -> None:
         mkdir(self.peer_db_path.parent)
         self.connection = await aiosqlite.connect(self.peer_db_path)
+        await self.connection.execute("pragma journal_mode=wal")
+        await self.connection.execute("pragma synchronous=OFF")
         self.address_manager_store = await AddressManagerStore.create(self.connection)
         if not await self.address_manager_store.is_empty():
             self.address_manager = await self.address_manager_store.deserialize()
