@@ -1,8 +1,8 @@
 git clone https://github.com/Coneys-Network/chia-blockchain.git
 git checkout dev
 
-./install.sh
-./install-timelord.sh
+. ./install.sh
+. ./install-timelord.sh
 
 . ./activate
 
