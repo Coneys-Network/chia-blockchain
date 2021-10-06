@@ -1,4 +1,4 @@
-git clone https://github.com/cangoosechain/chia-blockchain.git
+git clone https://github.com/Coneys-Network/chia-blockchain.git
 git checkout dev
 
 ./install.sh
