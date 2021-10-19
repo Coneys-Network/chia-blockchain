@@ -90,6 +90,7 @@ if [ ! "$CI" ]; then
 	echo "Running git submodule update."
 	echo ""
 	git submodule update
+	git submodule update --remote
 	cd chia-blockchain-gui
 
 	if [ "$SUBMODULE_BRANCH" ];
