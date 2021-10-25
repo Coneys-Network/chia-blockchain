@@ -127,7 +127,7 @@ def wallet_coin_unit(typ: WalletType, address_prefix: str) -> Tuple[str, int]:
 
 
 def print_balance(amount: int, scale: int, address_prefix: str) -> str:
-    ret = f"{amount/scale} {address_prefix} "
+    ret = f"{Decimal(amount)/Decimal(scale)} {address_prefix} "
     if scale > 1:
         ret += f"({amount} mojo)"
     return ret

@@ -280,7 +280,7 @@ full_node:
       host: introducer.coneys.shop
       port: 38446
   introducer_peer:
-      host: introducer.coneys.shop # Chia AWS introducer IPv4/IPv6
+      host: introducer.coneys.shop  # Chia AWS introducer IPv4/IPv6
       port: 38445
   wallet_peer:
     host: *self_hostname
