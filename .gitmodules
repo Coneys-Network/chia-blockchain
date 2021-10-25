@@ -5,4 +5,4 @@
 [submodule "chia-blockchain-gui"]
 	path = chia-blockchain-gui
 	url = https://github.com/Coneys-Network/chia-blockchain-gui.git
-	branch = dev
+		branch = main
